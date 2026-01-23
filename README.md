@@ -4,12 +4,12 @@
 
 <!-- Заголовок и бейджи -->
 <div align="center">
-  <h1>🛒Витрина продаж e-commerce и когортная аналитика</h1>
+  <h1>🛒 Витрина продаж e-commerce и когортная аналитика</h1>
   <p><b>Полноцикловый ETL-пайплайн обработки данных бразильского маркетплейса Olist</b></p>
-  <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
   <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apache-airflow&logoColor=white" alt="Airflow">
-  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black" alt="PowerBI">
+  <img src="https://img.shields.io/badge/Dash-1E90FF?style=for-the-badge&logo=plotly&logoColor=white" alt="Dash">
 </div>
 
 <hr>
@@ -33,105 +33,117 @@
 
 <hr>
 
-<!-- О проекте -->
 <h2 id="о-проекте">📖 О проекте</h2>
 <p>
-  Цель проекта: Построить воспроизводимый конвейер данных для трансформации сырых CSV-файлов в структурированную реляционную витрину. Проект включает в себя глубокую очистку данных, расчет продуктовых метрик и визуализацию бизнес-инсайтов.
+  Цель проекта: построить воспроизводимый ETL-конвейер, превращающий CSV-файлы Olist в структурированную SQLite витрину, с анализом когорт, RFM и SLA доставки.
 </p>
 <p><b>Основные задачи:</b></p>
 <ul>
-  <li>ETL: Обработка [Olist E-Commerce Dataset]</li>
-  <li>Data Modeling: Переход от плоских таблиц к схеме «Звезда»</li>
-  <li>Analytics: Когортный анализ (Retention), RFM-сегментация и контроль SLA доставки</li>
-  <li>Quality: Интеграция автоматических тестов качества данных на каждом этапе.</li>
+  <li>ETL: загрузка и очистка CSV данных</li>
+  <li>Data Modeling: схема "Звезда" с fact_orders и измерениями dim_customer, dim_product и др.</li>
+  <li>Analytics: когортный анализ (Retention), RFM, SLA доставки</li>
+  <li>Quality: контроль качества данных на каждом этапе</li>
 </ul>
 
 <h2 id="наша-команда">👥 Наша Команда</h2>
 <table align="center">
   <tr>
-    <td align="center"><b>Data Engineer</b></td>
-    <td align="center"><b>Data Analyst</b></td>
-    <td align="center"><b>QA Engineer</b></td>
+    <td align="center"><b>Разработчик 1</b></td>
+    <td align="center"><b>Разработчик 2</b></td>
+    <td align="center"><b>PM / QA</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/identicons/de.png" width="80px;"><br>Проектирование ETL/Airflow</td>
-    <td align="center"><img src="https://github.com/identicons/da.png" width="80px;"><br>Аналитика и Дашборды</td>
-    <td align="center"><img src="https://github.com/identicons/qa.png" width="80px;"><br>Контроль качества данных</td>
+    <td align="center"><img src="https://github.com/identicons/de.png" width="80px;"><br>ETL, SQLite, Airflow DAGs</td>
+    <td align="center"><img src="https://github.com/identicons/da.png" width="80px;"><br>Аналитика, Dash дашборд</td>
+    <td align="center"><img src="https://github.com/identicons/qa.png" width="80px;"><br>Тестирование, контроль качества, документация</td>
   </tr>
 </table>
 
 <h2 id="архитектура-пайплайна">🏗 Архитектура пайплайна</h2>
 <p>Система построена по принципу <b>Medallion Architecture</b>:</p>
 <ol>
-  <li><b>Bronze (Raw):</b> Загрузка исходных CSV из Kaggle в промежуточное хранилище.</li>
-  <li><b>Silver (Cleared):</b> Очистка, нормализация дат, обработка пропусков и дедупликация (Entity Resolution).</li>
-  <li><b>Gold (Business):</b> Финальная схема "Звезда" (Fact/Dim таблицы) и витрины для BI.</li>
+  <li><b>Bronze (Raw):</b> загрузка CSV в папку <code>data/raw/</code>.</li>
+  <li><b>Silver (Cleaned):</b> очистка, нормализация дат и валют, дедупликация.</li>
+  <li><b>Gold (Business):</b> создание fact/dim таблиц и витрин для анализа.</li>
 </ol>
 <div align="center">
-  <img src="https://mermaid.ink/img/pako:eNptkEELwjAMhf9KyGkv-geexYMg6mHIsS6brS1uU8pGmf73pS06PIXcl_fyXkhmY60pM-SFr0YpGNoVunIsDNo_T6Zp66YpCAtX_TCO0B-C9S06KAsreIdR2R0F628M3uGIsL_z-I7Qf8QvI9R_zG6mCSvWkE_YmE_YmE_YmE_I-T6z4pYp" alt="Pipeline Flow">
+  <img src="https://via.placeholder.com/700x300.png?text=Pipeline+Flow" alt="Pipeline Flow">
 </div>
 
 <h2 id="функциональность">🛠 Функциональность</h2>
 <ul>
-  <li><b>Моделирование данных:</b> Реализация схемы "Звезда" (<code>fact_orders</code>, <code>dim_customers</code>, <code>dim_products</code> и др.).</li>
-  <li><b>Оркестрация:</b> Полный цикл управления задачами в <b>Apache Airflow</b>.</li>
-  <li><b>Data Quality:</b> Автоматические тесты на уникальность PK, целостность FK и валидацию диапазонов (цены > 0, логические даты).</li>
+  <li><b>Моделирование данных:</b> схема "Звезда" (fact_orders, dim_customer, dim_product, dim_calendar)</li>
+  <li><b>Оркестрация:</b> DAG в Apache Airflow для запуска ETL</li>
+  <li><b>Data Quality:</b> проверка PK, FK, диапазонов и логики данных</li>
   <li><b>Аналитика:</b>
     <ul>
-      <li>Когортный анализ (M0, M1, M2 Retention).</li>
-      <li>SLA-трекинг: расчет доли доставок с опозданием и медианного времени пути.</li>
+      <li>Когортный анализ (M0→M1→M2 Retention)</li>
+      <li>SLA-трекинг: доля опозданий и медианное время доставки</li>
     </ul>
   </li>
 </ul>
 
 <h2 id="скриншоты">📊 Скриншоты</h2>
 <div align="center">
-  <p><i>Дашборд "Когортный анализ и Продажи"</i></p>
-  <img src="https://via.placeholder.com/700x350.png?text=E-commerce+Dashboard+Screenshot" alt="Dashboard">
+  <p><i>Когортный анализ</i></p>
+  <img src="./docs/dashboard_cohort.png" alt="Cohort Analysis">
+
+  <p><i>Продажи / топ-категории</i></p>
+  <img src="./docs/dashboard_rfm.png" alt="Sales Analysis">
+
+  <p><i>SLA доставки</i></p>
+  <img src="./docs/dashboard_sla.png" alt="SLA Analysis">
 </div>
 
 <h2 id="технологический-стек">💻 Технологический стек</h2>
 <p>
-  <b>Storage:</b> PostgreSQL <br>
-  <b>ETL/Processing:</b> Python (Pandas/SQLAlchemy), SQL <br>
+  <b>Storage:</b> SQLite <br>
+  <b>ETL/Processing:</b> Python 3.11 (Pandas, SQLAlchemy) <br>
   <b>Orchestration:</b> Apache Airflow <br>
-  <b>Quality Control:</b> Great Expectations / dbt tests <br>
-  <b>Visualization:</b> Power BI / Metabase
+  <b>Quality Control:</b> простые unit-тесты + проверки логики данных <br>
+  <b>Visualization:</b> Dash / Plotly
 </p>
 
 <h2 id="структура-проекта">📂 Структура проекта</h2>
 <pre>
-├── dags/                # Airflow DAGs для управления ETL
-├── sql/
-│   ├── ddl/             # Схемы таблиц (Fact/Dim)
-│   ├── marts/           # Скрипты для формирования витрин
-├── notebooks/           # Исследовательский анализ (EDA)
-├── data_quality/        # Правила очистки и отчеты об аномалиях
-├── docs/                # DATA_README и схема БД
-└── docker-compose.yaml  # Развертывание инфраструктуры
+├── src/
+│   ├── etl/             # ETL скрипты
+│   ├── analysis/        # Dash дашборд и скрипты метрик
+├── data/
+│   ├── raw/             # исходные CSV
+│   ├── processed/       # очищенные данные
+│   └── ecommerce.db     # SQLite база (игнорируется в Git)
+├── docs/                # схемы БД, README, отчёты
+├── dags/                # Airflow DAGs
+└── docker-compose.yaml  # опциональное развертывание
 </pre>
 
 <h2 id="быстрый-старт">🚀 Быстрый старт</h2>
 <ol>
   <li>Склонируйте репозиторий.</li>
-  <li>Разверните окружение через Docker:
-    <pre><code>docker-compose up -d</code></pre>
+  <li>Создайте виртуальное окружение и установите зависимости:
+    <pre><code>python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt</code></pre>
   </li>
-  <li>Поместите CSV-файлы Olist в папку <code>/data/raw/</code>.</li>
-  <li>Запустите DAG <code>olist_main_pipeline</code> в UI Airflow.</li>
+  <li>Поместите CSV-файлы Olist в <code>data/raw/</code>.</li>
+  <li>Запустите ETL DAG через Airflow или отдельные скрипты Python.</li>
+  <li>Для дашборда:
+    <pre><code>python src/analysis/dashboard_app.py</code></pre>
+  </li>
 </ol>
 
 <h2 id="полная-документация">📖 Полная документация</h2>
 <details>
   <summary><b>Методология очистки и метрики</b></summary>
   <ul>
-    <li><b>Дедупликация:</b> Сопоставление клиентов по связке (zip_code + prefix_address).</li>
-    <li><b>Аномалии:</b> Исключение заказов с фрахтом > 3 стандартных отклонений.</li>
-    <li><b>Метрики:</b> 
+    <li>Дедупликация: сопоставление клиентов по email и zip_code</li>
+    <li>Аномалии: цены > 0, фрахт/вес в разумных диапазонах</li>
+    <li>Метрики:
       <ul>
         <li>GMV (Gross Merchandise Volume)</li>
         <li>AOV (Average Order Value)</li>
-        <li>Late Delivery Rate (Доля опозданий)</li>
+        <li>Late Delivery Rate</li>
       </ul>
     </li>
   </ul>
@@ -139,13 +151,12 @@
 
 <h2 id="развертывание">🌐 Развертывание</h2>
 <p>
-  Система готова к деплою в Docker-контейнерах. 
-  Минимальные системные требования: 4 CPU, 8 GB RAM для стабильной работы Airflow и базы данных.
+  Можно запускать локально через Python + Airflow. Для полной имитации CI/CD можно использовать Docker Compose.
 </p>
 
 <hr>
 <div align="center">
-  <b>Проект выполнен в рамках портфолио по направлению Data Engineering / Analytics, 2026.</b>
+  <b>Проект выполнен в рамках учебного задания по Data Engineering / Analytics, 2026.</b>
 </div>
 
 </body>
