@@ -48,14 +48,14 @@
 <h2 id="наша-команда">👥 Наша Команда</h2>
 <table align="center">
   <tr>
-    <td align="center"><b>Разработчик 1</b></td>
-    <td align="center"><b>Разработчик 2</b></td>
-    <td align="center"><b>PM / QA</b></td>
+    <td align="center"><b>Project-manager</b></td>
+    <td align="center"><b>Разработчик</b></td>
+    <td align="center"><b>Тестировщики / QA</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/identicons/de.png" width="80px;"><br>ETL, SQLite, Airflow DAGs</td>
-    <td align="center"><img src="https://github.com/identicons/da.png" width="80px;"><br>Аналитика, Dash дашборд</td>
-    <td align="center"><img src="https://github.com/identicons/qa.png" width="80px;"><br>Тестирование, контроль качества, документация</td>
+    <td align="center"><img src="https://github.com/identicons/de.png" width="80px;"><br>Планирование спринтов, управление рисками, общая отчётность</td>
+    <td align="center"><img src="https://github.com/identicons/da.png" width="80px;"><br>Написание кода transform и load, настройка БД. Дизайн Airflow DAG, реализация клиентов API</td>
+    <td align="center"><img src="https://github.com/identicons/qa.png" width="80px;"><br>Проектирование витрины и дашборда, разработка DQ-правил, финальная аналитика. Реализация визуализаций в BI-инструменте</td>
   </tr>
 </table>
 
@@ -70,18 +70,14 @@
   <img src="https://via.placeholder.com/700x300.png?text=Pipeline+Flow" alt="Pipeline Flow">
 </div>
 
-<h2 id="функциональность">🛠 Функциональность</h2>
-<ul>
-  <li><b>Моделирование данных:</b> схема "Звезда" (fact_orders, dim_customer, dim_product, dim_calendar)</li>
-  <li><b>Оркестрация:</b> DAG в Apache Airflow для запуска ETL</li>
-  <li><b>Data Quality:</b> проверка PK, FK, диапазонов и логики данных</li>
-  <li><b>Аналитика:</b>
-    <ul>
-      <li>Когортный анализ (M0→M1→M2 Retention)</li>
-      <li>SLA-трекинг: доля опозданий и медианное время доставки</li>
-    </ul>
-  </li>
-</ul>
+🛠 Функциональность
+<a name="функциональность"></a>
+<details>
+<summary><b>1. Схема данных (Star Schema)</b></summary>
+Реализована нормализованная структура:
+- **Факты:** fact_orders, fact_order_items.
+- **Измерения:** dim_customer, dim_product, dim_geography, dim_calendar.
+</details>
 
 <h2 id="скриншоты">📊 Скриншоты</h2>
 <div align="center">
@@ -106,16 +102,43 @@
 
 <h2 id="структура-проекта">📂 Структура проекта</h2>
 <pre>
+CityPulse/
 ├── src/
-│   ├── etl/             # ETL скрипты
-│   ├── analysis/        # Dash дашборд и скрипты метрик
+│   ├── etl/
+│   │   ├── etl_pipeline.ipynb
+│   │   ├── data_quality_checks.py
+│   │   ├── sql_schema.sql
+│   │   └── init.py
+│   │
+│   ├── analysis/
+│   │   ├── cohort_analysis.ipynb
+│   │   ├── rfm_analysis.ipynb
+│   │   └── sla_analysis.ipynb
+│   │
+│   ├── airflow_dag/
+│   │   └── ecommerce_etl_dag.py
+│   │
+│   └── init.py
+│
 ├── data/
-│   ├── raw/             # исходные CSV
-│   ├── processed/       # очищенные данные
-│   └── ecommerce.db     # SQLite база (игнорируется в Git)
-├── docs/                # схемы БД, README, отчёты
-├── dags/                # Airflow DAGs
-└── docker-compose.yaml  # опциональное развертывание
+│   ├── olist_orders.csv
+│   ├── olist_customers.csv
+│   ├── olist_products.csv
+│   ├── olist_order_items.csv
+│   ├── olist_geolocation.csv
+│   └── ecommerce.db
+│
+├── docs/
+│   ├── README.md
+│   ├── ARCHITECTURE.md
+│   ├── DATA_README.md
+│   ├── TESTING.md
+│   ├── CLEANING_RULES.md
+│   └── REPORT.md
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
 </pre>
 
 <h2 id="быстрый-старт">🚀 Быстрый старт</h2>
