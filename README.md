@@ -85,8 +85,14 @@
 
 <h2 id="скриншоты">📊 Скриншоты</h2>
 <div align="center">
-  <p><i>Dash дашборд "Когортный анализ и Продажи"</i></p>
-  <img src="https://via.placeholder.com/700x350.png?text=Dashboard+Placeholder" alt="Dashboard">
+  <p><i>Когортный анализ</i></p>
+  <img src="./docs/dashboard_cohort.png" alt="Cohort Analysis">
+
+  <p><i>Продажи / топ-категории</i></p>
+  <img src="./docs/dashboard_rfm.png" alt="Sales Analysis">
+
+  <p><i>SLA доставки</i></p>
+  <img src="./docs/dashboard_sla.png" alt="SLA Analysis">
 </div>
 
 <h2 id="технологический-стек">💻 Технологический стек</h2>
