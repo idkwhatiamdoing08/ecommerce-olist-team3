@@ -3,7 +3,6 @@ try:
     from airflow import DAG
     from airflow.operators.python import PythonOperator
 except Exception:
-    # Dummy stand-ins so file can run without Airflow installed
     class DAG:
         def __init__(self, *args, **kwargs): pass
     class PythonOperator:
