@@ -1,0 +1,82 @@
+{
+  "basics": {
+    "total_orders": 95378.0,
+    "total_customers": 96096.0,
+    "gmv": 15349564.09,
+    "aov": 160.93401088301286
+  },
+  "top_categories": [
+    {
+      "product_category_name": "beleza_saude",
+      "revenue": 1405543.95
+    },
+    {
+      "product_category_name": "relogios_presentes",
+      "revenue": 1270896.71
+    },
+    {
+      "product_category_name": "cama_mesa_banho",
+      "revenue": 1177158.42
+    },
+    {
+      "product_category_name": "esporte_lazer",
+      "revenue": 1107107.41
+    },
+    {
+      "product_category_name": "informatica_acessorios",
+      "revenue": 1020278.91
+    },
+    {
+      "product_category_name": "moveis_decoracao",
+      "revenue": 853881.89
+    },
+    {
+      "product_category_name": "utilidades_domesticas",
+      "revenue": 753198.55
+    },
+    {
+      "product_category_name": "cool_stuff",
+      "revenue": 704479.06
+    },
+    {
+      "product_category_name": "automotivo",
+      "revenue": 671706.27
+    },
+    {
+      "product_category_name": "ferramentas_jardim",
+      "revenue": 571379.68
+    }
+  ],
+  "late_delivery_percent": 4.171869796869797,
+  "delivery_by_city": [
+    {
+      "customer_city": "sao paulo",
+      "avg_delivery_days": 6.788855394043674,
+      "total_orders": 16822
+    },
+    {
+      "customer_city": "rio de janeiro",
+      "avg_delivery_days": 13.176134845147322,
+      "total_orders": 7404
+    },
+    {
+      "customer_city": "belo horizonte",
+      "avg_delivery_days": 10.277749252070993,
+      "total_orders": 2971
+    },
+    {
+      "customer_city": "brasilia",
+      "avg_delivery_days": 11.592017702510807,
+      "total_orders": 2287
+    },
+    {
+      "customer_city": "curitiba",
+      "avg_delivery_days": 9.82115434420639,
+      "total_orders": 1664
+    }
+  ],
+  "retention": {
+    "retention_m0_m1": "0.0%",
+    "note": "All customers made only one purchase (no repeat buyers in dataset)"
+  }
+}

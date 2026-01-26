@@ -1,0 +1,34 @@
+GMV (Gross Merchandise Value): R$15,349,564.09
+AOV (Average Order Value): R$160.93
+Total Orders: 95,378
+Unique Customers: 96,096
+Orders per Customer: 0.99
+
+ COHORT RETENTION:
+----------------------------------------
+M0 → M1 Retention: 0.0%
+Note: All customers made only one purchase (no repeat buyers in dataset)
+
+ DELIVERY PERFORMANCE:
+----------------------------------------
+Late Delivery Rate (>30 days): 4.17%
+
+Average Delivery Time by Top Cities:
+  sao paulo: 6.8 days (16,822 orders)
+  rio de janeiro: 13.2 days (7,404 orders)
+  belo horizonte: 10.3 days (2,971 orders)
+  brasilia: 11.6 days (2,287 orders)
+  curitiba: 9.8 days (1,664 orders)
+
+ TOP CATEGORIES BY REVENUE:
+----------------------------------------
+ 1. beleza_saude                   R$1,405,543.95
+ 2. relogios_presentes             R$1,270,896.71
+ 3. cama_mesa_banho                R$1,177,158.42
+ 4. esporte_lazer                  R$1,107,107.41
+ 5. informatica_acessorios         R$1,020,278.91
+ 6. moveis_decoracao               R$  853,881.89
+ 7. utilidades_domesticas          R$  753,198.55
+ 8. cool_stuff                     R$  704,479.06
+ 9. automotivo                     R$  671,706.27
+10. ferramentas_jardim             R$  571,379.68

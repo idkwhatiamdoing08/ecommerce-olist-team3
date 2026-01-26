@@ -1,0 +1,11 @@
+Exact duplicates by customer_unique_id: 6342 records
+  Affected unique customers: 2997
+  Example duplicates: {'00172711b30d52eea8b313a7f2cced02': 2, '004288347e5e88a27ded2bb23747066c': 2, '004b45ec5c64187465168251cd1c9c2f': 2}
+Potential duplicates by city+zip: 92968 records
+  Example: franca 14409
+  Example: sao bernardo do campo 9790
+  Example: sao paulo 1151
+  Example: mogi das cruzes 8775
+  Example: campinas 13056
+Removed duplicates: 3345
+Final customer count: 96096
