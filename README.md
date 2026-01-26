@@ -48,9 +48,9 @@
 <h2 id="наша-команда">👥 Наша Команда</h2>
 <table align="center">
   <tr>
-    <td align="center"><b>Project-manager</b></td>
-    <td align="center"><b>Разработчик</b></td>
-    <td align="center"><b>Тестировщики / QA</b></td>
+    <td align="center"><b>Project-manager - Чернов Алексей</b></td>
+    <td align="center"><b>Разработчик - Швыркунов Андрей</b></td>
+    <td align="center"><b>Тестировщики / QA - Калмыков Степан</b></td>
   </tr>
   <tr>
     <td align="center"><img src="https://github.com/identicons/de.png" width="80px;"><br>Планирование спринтов, управление рисками, общая отчётность</td>
